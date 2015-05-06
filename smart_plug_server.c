@@ -52,13 +52,13 @@ int main(int argc, char *argv[])
     printf("\n\n\n");
     printf("    Prepare send message is:%s", send_buf);
     
-    int sock_fd;   //套接子描述符号
+    int sock_fd;   
     int recv_num;
     int send_num;
     int client_len;
     char recv_buf[20];
     struct sockaddr_in  addr_serv;
-    struct sockaddr_in  addr_client;//服务器和客户端地址
+    struct sockaddr_in  addr_client;
     sock_fd = socket(AF_INET,SOCK_DGRAM,0);
     if(sock_fd < 0){
             perror("socket");
@@ -68,9 +68,9 @@ int main(int argc, char *argv[])
     }
     /*init server address*/
     memset(&addr_serv,0,sizeof(struct sockaddr_in));
-    addr_serv.sin_family = AF_INET;//协议族
+    addr_serv.sin_family = AF_INET;
     addr_serv.sin_port = htons(SERV_PORT);
-    addr_serv.sin_addr.s_addr = htonl(INADDR_ANY);//任意本地址
+    addr_serv.sin_addr.s_addr = htonl(INADDR_ANY); //any local address
 
     client_len = sizeof(struct sockaddr_in);
     
