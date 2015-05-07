@@ -22,7 +22,7 @@ void DieWithSystemMessage(const char *msg) {
   exit(1);
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) // main function
 {
     if (argc != 3) {// Test for correct number of arguments
         DieWithUserMessage("Parameter(s)", "<Device ID> <FFF>");
